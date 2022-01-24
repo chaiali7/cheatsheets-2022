@@ -1,0 +1,139 @@
+/* Creates css standards for the js app class. */
+.App {
+  background: rgb(88,117,245);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+/* Creates css standards for the logo*/
+.App-logo {
+  pointer-events: none;
+  height: 3.5rem;
+  width: 3.5rem;
+  background: url("https://cliparting.com/wp-content/uploads/2018/03/cool-pictures-2018-2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+/* This does an animation effect for the logo used in the loading screen*/
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/*Makes CSS standards for the app header. Focuses on the text size and color.*/
+.App-header {
+  background: rgb(256,256,256);
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  padding: 0 1rem;
+}
+
+
+/* Creates css standards the title which is default bold font in white*/
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+/* Creates css standards for the footer. All text and borders are white*/
+.footer {
+  height: 4rem;
+  width: 100%;
+  border-top: 2px solid white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: rgba(227, 173, 238, 0.377);
+  position: relative;
+}
+
+/* Creates css standards for text input. Black background with white text*/
+.text-input {
+  width: 100%;
+  border: 1px solid white;
+  height: 2rem;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  background: black;
+  color: white;
+}
+
+/* Creates css standards for a send feature with no border*/
+.send {
+  background: white;
+  border-radius: 50%;
+  border: none;
+  height: 1.7rem;
+  width: 1.7rem;
+  position: absolute;
+  right: 1.15rem;
+  cursor: pointer;
+}
+
+/* Css for Stripe (the company) button type. Creates a blue button */
+.button1{
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+/*Creates disabled button state*/
+.button1:disabled {
+  cursor: default;
+}
+
+/*Creates a focused button state*/
+.button1:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
