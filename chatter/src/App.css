@@ -103,8 +103,7 @@
 }
 
 /*tries to get the tooltip on the message*/
-.message.arrow-left:after {
-  content: " ";
+.messages.arrow-left:after {
   position: absolute;
   left: -15px;
   top: 15px;
@@ -116,10 +115,10 @@
 
 /*attemps to make the messages responsive*/
 @media only screen and (min-width:240px) and (max-width: 768px){
-    .message{
-        display: block;
+    .messages{
+        display: flex;
         float: none;
-        margin: 40px auto;
+        margin: auto;
     }
 }
 
