@@ -1,35 +1,32 @@
 import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TextInput from "./TextInput";
+import { useState } from "react";
+import Message from "./Message";
 
 function App() {
+  const [messages, setMessages] = useState([]);
+  function sendMessage(text) {
+    const newMessage = {
+      text,
+      time: Date.now(),
+      user: "Aiza",
+    };
+    setMessages([newMessage, ...messages]);
+  }
+  console.log(messages);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Here is an app called Chatter.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Made in React.
-        </a>
+      <header className="header">
+        <div className="logo" />
+        <span className="title">CHATTER!</span>
       </header>
-
-      <header className="title">
-        What's the chatter these days?
-      </header>
-
-      <header className="button1">
-        <button class="button1" role="button">Get Started!</button>
-      </header>
-
-      <header className="footer">
-        An app to chatter with friends. No tweeting.
-      </header>
+      <div className="messages">
+        {messages.map((msg) => {
+          return <Message {...msg} />;
+        })}
+      </div>
+      <TextInput sendMessage={sendMessage} />
     </div>
   );
 }
