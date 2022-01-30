@@ -36,6 +36,7 @@
   align-items: center;
   padding: 0 1rem;
   background: rgba(255, 255, 255, 0.3);
+  margin: auto;
 }
 
 
@@ -47,43 +48,6 @@
   display: flex;
   align-items: center;
   margin-left: 1rem;
-}
-
-/* Creates css standards for the footer. All text and borders are white. I can't get the gradient in the back */
-.footer {
-  height: 4rem;
-  width: 100%;
-  border-top: 2px solid white;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  color: linear-gradient(teal to purple);
-  position: relative;
-}
-
-/* Creates css standards for the text input. Black background with white text*/
-.text-input {
-  width: 100%;
-  border: 1px solid white;
-  height: 2rem;
-  border-radius: 1rem;
-  padding: 0 1rem;
-  position: absolute;
-  background: black;
-  color: white;
-}
-
-/* Creates css standards for the send button with no border*/
-.send {
-  background: white;
-  border-radius: 50%;
-  border: none;
-  height: 1.7rem;
-  width: 1.7rem;
-  position: absolute;
-  right: 1rem;
-  cursor: pointer;
-  position: absolute;
 }
 
 /* Creates css standards for multiple messages*/
@@ -115,19 +79,22 @@
   margin: 0.2rem;
   border-radius: .8rem;
   border: 1px solid gray;
+  position: relative;
+  min-height: 1.0rem;
 }
 
-/*tries to get the tooltip on the message*/
-.message.arrow-left:after {
+/* Creates tooltip for the message*/
+.message::before {
+  content: " ";
   position: absolute;
-  left: -15px;
-  top: 15px;
-  border-top: 15px solid transparent;
-  border-right: 15px solid gray;
-  border-left: none;
-  border-bottom: 15px solid transparent;
+  display: flex;
+  top: 0.5 rem; /* At the left side of the tooltip */
+  left: -0.3rem;
+  margin-left: -3px;
+  border-right: .5rem solid black;
+  border-top: .7rem solid transparent; 
+  border-bottom: 0.5rem solid transparent; 
 }
-
 
 .App-link {
   color: #61dafb;
