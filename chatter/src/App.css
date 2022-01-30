@@ -1,14 +1,10 @@
 /* Creates css standards for the js app class. */
 .App {
-  background: rgb(88,117,245);
+  background: linear-gradient(45deg, teal,indigo);
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
-}
-
-#grad {
-  background-image: linear-gradient(to right, teal,indigo);
 }
 
 /* Creates css standards for the logo*/
@@ -65,7 +61,7 @@
   position: relative;
 }
 
-/* Creates css standards for text input. Black background with white text*/
+/* Creates css standards for the text input. Black background with white text*/
 .text-input {
   width: 100%;
   border: 1px solid white;
@@ -77,7 +73,7 @@
   color: white;
 }
 
-/* Creates css standards for a send feature with no border*/
+/* Creates css standards for the send button with no border*/
 .send {
   background: white;
   border-radius: 50%;
@@ -85,7 +81,7 @@
   height: 1.7rem;
   width: 1.7rem;
   position: absolute;
-  right: 1.15rem;
+  right: 1rem;
   cursor: pointer;
   position: absolute;
 }
@@ -98,19 +94,8 @@
   overflow: auto;
   max-height: calc(100vh - 4rem - 4rem);
   min-height: calc(100vh - 4rem - 4rem);
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-/*tries to get the tooltip on the message*/
-.messages.arrow-left:after {
-  position: absolute;
-  left: -15px;
-  top: 15px;
-  border-top: 15px solid transparent;
-  border-right: 15px solid black;
-  border-left: none;
-  border-bottom: 15px solid transparent;
+  padding: .5rem;
+  border-radius: 20px;
 }
 
 /*attemps to make the messages responsive*/
@@ -128,8 +113,21 @@
   background: black;
   padding: 0.5rem 1rem;
   margin: 0.2rem;
-  border-radius: .3rem;
+  border-radius: .8rem;
+  border: 1px solid gray;
 }
+
+/*tries to get the tooltip on the message*/
+.message.arrow-left:after {
+  position: absolute;
+  left: -15px;
+  top: 15px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid gray;
+  border-left: none;
+  border-bottom: 15px solid transparent;
+}
+
 
 .App-link {
   color: #61dafb;
