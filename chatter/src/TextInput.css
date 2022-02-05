@@ -14,12 +14,11 @@
 
 /* Creates css standards for the text input. Black background with white text*/
 .text-input {
-  width: 90%;
+  width:calc(100% - 50px);
   border: 1px solid white;
   height: 2rem;
   border-radius: 1rem;
   padding: 0 1rem;
-  position: absolute;
   background: black;
   color: white;
 }
@@ -32,10 +31,20 @@
   height: 1.7rem;
   width: 1.7rem;
   position: absolute;
-  right: 1.25rem;
+  right: 1.15rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+/* The hover state for the send button*/
+.send:hover {
+  background: black;
+  border: 1px solid white;
+}
+.send:hover svg {
+  stroke: white;
+}
 
 
 

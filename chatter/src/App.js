@@ -4,36 +4,67 @@ import TextInput from "./TextInput";
 import "./TextInput.css";
 import { useState } from "react";
 import Message from "./Message";
+import React from "react";
+import Camera from 'react-snap-pic'
 
 /*function to make our react app*/ 
-function App() {
+function App(props) {
   
+  // creates constant for show cameras
+  const [showCamera, setShowCamera] = useState(false);
+  function takePicture() {
+    takePicture = (img) => {
+      console.log(img)
+      setShowCamera(false)
+    }
+  }
+  
+
+  // "setMessages" is a function that is used to update "messages"
   const [messages, setMessages] = useState([]);
-  /*uses use state function to add messages to an array*/ 
+
+  // "sendMessage" runs whenver we click the send button
   function sendMessage(text) {
+    if (!text) return;
+    //create a new message object
     const newMessage = {
-      text,
+      text: text,
       time: Date.now(),
       user: "Aiza",
     };
+    // set the "messages" to be a new array
+    // that contains the new message + all the old messages
     setMessages([newMessage, ...messages]);
   }
+
+  // every time state changes, React "re-renders"
+  // so this console.log will run again
   console.log(messages);
-  /*sends messages to make them appear*/ 
+
+  // we return the HTML
   return (
-    <div className="App">
+    <div
+      className="App"
+    >
       <header className="header">
-        <div className="logo"/>
-        <span className="title">Chatter!</span>
+        <div className="logo" />
+        <span className="title">CHATTER!</span>
       </header>
       <div className="messages">
-        {messages.map((msg) => {
-          return <Message {...msg} />;
+        {messages.map((msg, i) => {
+          // loop over every message in the "messages" array
+          // and return a Message component
+          // we are "spreading" all the items in "msg" into the props
+          // "key" needs to be a unique value for each item
+          return <Message {...msg} key={i} />;
         })}
       </div>
-      <TextInput sendMessage={sendMessage} /> 
+      <TextInput sendMessage={text=> props.onSend(text)} 
+        showCamera={()=>setShowCamera(true)}/>
+      <div>{showCamera && <Camera takePicture={takePicture} />}</div>
     </div>
   );
 }
+
 
 export default App;

@@ -1,5 +1,7 @@
 import "./TextInput.css";
 import { useState } from "react";
+import React from "react";
+import { FiSend, FiCamera } from 'react-icons/fi'
 
 function TextInput(props) {
   const [text, setText] = useState("");
@@ -17,8 +19,13 @@ function TextInput(props) {
   }
 
   /*returns the message when clicking on the send button in the footer*/ 
+  /*changes send icon to be paper plane*/ 
   return (
     <footer className="footer">
+      <button onClick={props.showCamera}
+        style={{left:10, right:'auto'}}>
+        <FiCamera style={{height:15, width:15}} />
+      </button>
       <input
         className="text-input"
         value={text}
@@ -26,7 +33,7 @@ function TextInput(props) {
         onKeyPress={onKeyPress}
       />
       <button className="send" onClick={send}>
-        ↑
+        <FiSend style = {{height:15, width:15}} />
       </button>
     </footer>
   );
