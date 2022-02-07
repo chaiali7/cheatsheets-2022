@@ -1,11 +1,13 @@
 import "./NamePicker.css";
 import { useState } from "react";
 import React from "react";
-import {FiEdit, FiCheckCircle} from 'react-icons/fi'
+import {FiEdit, FiCheckCircle} from 'react-icons/fi';
 
+// creates a function name picker that allows users to edit and assign a name
 function NamePicker() {
   const [editName, setEditName] = useState(false);
-  const [name, setName] = useState('') 
+  const [name, setName] = useState(''); 
+
   function TypeName(){
     if(!name.length==0) {
       setEditName(false);
@@ -33,13 +35,13 @@ function NamePicker() {
     /*if we want to edit the name we see the editor button*/
   } else {
     return (
-      <div className = "namePicker">
+      <header className = "header">
         {"Current User:"}
         {name}
         <button className = "editor" onClick={ChangeName}>
           <FiEdit/>
         </button>
-      </div>    
+      </header>    
     );
   }
   

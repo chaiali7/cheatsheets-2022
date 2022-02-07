@@ -42,6 +42,14 @@ function App(props) {
   // so this console.log will run again
   console.log(messages);
 
+  // set the constants from name picker in the app
+  const [editName, setEditName] = useState();
+  const [name, setName] = useState('') 
+  function NamePicker() {
+    name: "Aiza";
+  }
+
+  // I don't know what to do in line 54 to get the name picker to actually show up :(
   // we return the HTML
   return (
     <div
@@ -50,7 +58,7 @@ function App(props) {
       <header className="header">
         <div className="logo" />
         <span className="title">CHATTER!</span>
-        <div className="namePicker"/>
+        <div className="namePicker"/> 
       </header>
       <div className="messages">
         {messages.map((msg, i) => {
