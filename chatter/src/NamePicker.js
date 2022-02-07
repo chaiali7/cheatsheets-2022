@@ -36,7 +36,7 @@ function NamePicker() {
   } else {
     return (
       <header className = "header">
-        {"Current User:"}
+        {"Current User: "}
         {name}
         <button className = "editor" onClick={ChangeName}>
           <FiEdit/>
