@@ -6,6 +6,8 @@ import { useState } from "react";
 import Message from "./Message";
 import React from "react";
 import Camera from 'react-snap-pic'
+import "./NamePicker.css";
+import NamePicker from "./NamePicker";
 
 /*function to make our react app*/ 
 function App(props) {
@@ -18,7 +20,6 @@ function App(props) {
       setShowCamera(false)
     }
   }
-  
 
   // "setMessages" is a function that is used to update "messages"
   const [messages, setMessages] = useState([]);
@@ -49,6 +50,7 @@ function App(props) {
       <header className="header">
         <div className="logo" />
         <span className="title">CHATTER!</span>
+        <div className="namePicker"/>
       </header>
       <div className="messages">
         {messages.map((msg, i) => {
